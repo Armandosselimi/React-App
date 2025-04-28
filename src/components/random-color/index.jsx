@@ -1,29 +1,33 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 export default function RandomColor() {
   const [color, setColor] = useState("#000000");
   const [typeOfColor, setTypeOfColor] = useState("hex");
 
-  function randomColor(colorType) {
-    if (colorType === "hex") {
-      let letters = "0123456789ABCDEF";
-      let color = "#";
-      for (let i = 0; i < 6; i++) {
-        color += letters[Math.floor(Math.random() * 16)];
-      }
-      return color;
-    } else if (colorType === "rgb") {
-      let g = Math.floor(Math.random() * 256);
-      let b = Math.floor(Math.random() * 256);
-      let r = Math.floor(Math.random() * 256);
-      let color = `rgb(${r},${g},${b})`;
-      return color;
-    }
-  }
-
-  const handleRandomColor = () => {
-    setColor(() => randomColor(typeOfColor));
+  const randomColorUtil = (length) => {
+    return Math.floor(Math.random() * length);
   };
+
+  const handleRandomcHexColor = () => {
+    let letters = "0123456789ABCDEF";
+    let color = "#";
+    for (let i = 0; i < 6; i++) {
+      color += letters[randomColorUtil(letters.length)];
+    }
+    setColor(color);
+  };
+  const handleRandomcRgbColor = () => {
+    let g = randomColorUtil(256);
+    let b = randomColorUtil(256);
+    let r = randomColorUtil(256);
+    setColor(`rgb(${r},${g},${b})`);
+  };
+
+  useEffect(() => {
+    if (typeOfColor === "hex") handleRandomcHexColor();
+    else handleRandomcRgbColor();
+  }, [typeOfColor]);
+
   return (
     <div
       style={{
@@ -34,7 +38,15 @@ export default function RandomColor() {
       }}
     >
       <div>
-        <button onClick={handleRandomColor}>Generate Random Color</button>
+        <button
+          onClick={
+            typeOfColor === "hex"
+              ? handleRandomcHexColor
+              : handleRandomcRgbColor
+          }
+        >
+          Generate Random Color
+        </button>
         <button
           onClick={() => setTypeOfColor("hex")}
           disabled={typeOfColor === "hex"}
