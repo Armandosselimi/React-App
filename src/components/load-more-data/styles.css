@@ -1,0 +1,21 @@
+/* .container {
+  display: grid;
+  gap: 1.5rem;
+  padding-inline: 1rem;
+  place-items: center;
+}
+
+.product-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.625rem;
+}
+
+.product {
+  padding: 1.25rem;
+  border: 1px solid;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+} */
