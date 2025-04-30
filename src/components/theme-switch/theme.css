@@ -1,0 +1,43 @@
+:root {
+  --background: #fff;
+  --text-prmary: #000;
+  --button-bg: #000;
+  --button-text: #fff;
+}
+
+[data-theme="dark"] {
+  --background: #000;
+  --text-prmary: #fff;
+  --button-bg: #fff;
+  --button-text: #000;
+}
+
+.switch-theme {
+  height: 100vh;
+
+  background-color: var(--background);
+  transition: all 0.4s ease-in-out;
+}
+.container {
+  display: grid;
+  place-content: center;
+  gap: 2rem;
+}
+
+.container p {
+  color: var(--text-prmary);
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.container button {
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  margin-inline: 1rem;
+  border: 1px solid var(--button-bg);
+  border-radius: 0.5rem;
+  font-size: 1.25rem;
+  font-weight: bold;
+}

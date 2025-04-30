@@ -7,6 +7,7 @@ import LoadMoreData from "./components/load-more-data";
 import TreeViewMenu from "./components/recursive-navigation-menu";
 import menus from "./components/recursive-navigation-menu/data";
 import QrCodeGEnerator from "./components/QR-code-generator";
+import SwitchTheme from "./components/theme-switch";
 
 export default function App() {
   return (
@@ -21,7 +22,8 @@ export default function App() {
       /> */}
       {/* <LoadMoreData /> */}
       {/* <TreeViewMenu menus={menus} /> */}
-      <QrCodeGEnerator />
+      {/* <QrCodeGEnerator /> */}
+      <SwitchTheme />
     </div>
   );
 }
