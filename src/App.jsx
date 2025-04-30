@@ -8,6 +8,7 @@ import TreeViewMenu from "./components/recursive-navigation-menu";
 import menus from "./components/recursive-navigation-menu/data";
 import QrCodeGEnerator from "./components/QR-code-generator";
 import SwitchTheme from "./components/theme-switch";
+import ScrollIndicator from "./components/scroll-indicator";
 
 export default function App() {
   return (
@@ -23,7 +24,8 @@ export default function App() {
       {/* <LoadMoreData /> */}
       {/* <TreeViewMenu menus={menus} /> */}
       {/* <QrCodeGEnerator /> */}
-      <SwitchTheme />
+      {/* <SwitchTheme /> */}
+      <ScrollIndicator url={"https://dummyjson.com/products?limit=100"} />
     </div>
   );
 }
