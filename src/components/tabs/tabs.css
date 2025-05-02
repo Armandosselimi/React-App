@@ -1,0 +1,35 @@
+.wrapper {
+  display: grid;
+  place-items: center;
+  gap: 1rem;
+}
+
+.heading {
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.tab-item {
+  padding: 0.5rem 1rem;
+  border: 1px solid rgb(22, 22, 22);
+  background: rgba(0, 119, 255, 0.856);
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+  transform: scale(1);
+  transition: transform 0.2s ease;
+}
+
+.tab-item.active {
+  transform: scale(1.1);
+  border: 1px solid #fff;
+}
+
+.content {
+  font-size: 1.5rem;
+  font-weight: 500;
+  font-family: sans-serif;
+}
